@@ -18,3 +18,20 @@ class Contact(models.Model):
         return self.name
 
 
+
+
+class PhoneNumber(models.Model):
+
+        number = models.CharField("number", max_length=10)
+
+        type = models.CharField(
+        max_length=2,
+        choices=PhoneNumberType.choices,
+        default=PhoneNumberType.HOME,
+        )
+
+    class PhoneNumberType(models.TextChoices):
+        MOBILE = 'MO', _('Freshman')
+        HOME = 'HO', _('Sophomore')
+
+
