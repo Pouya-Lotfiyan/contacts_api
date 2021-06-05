@@ -13,8 +13,8 @@ class PhoneNumberSerializer(serializers.ModelSerializer):
 
 class ContactSerializer(serializers.ModelSerializer):
 
-    phoneNumbers = PhoneNumberSerializer(many=True)
+    # phoneNumbers = PhoneNumberSerializer(many=True)
 
     class Meta:
         model = Contact
-        fields = ('id', 'first_name', 'last_name', 'phoneNumbers')
+        fields = ('id', 'first_name', 'last_name')

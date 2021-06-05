@@ -32,4 +32,4 @@ class PhoneNumber(models.Model):
     choices=PhoneNumberType.choices,
     default=PhoneNumberType.HOME,
     )
-    contact = models.ForeignKey(Contact, on_delete=models.CASCADE, db_constraint=True, related_name='phoneNumbers')
+    contact = models.ForeignKey(Contact, null=True,on_delete=models.CASCADE, db_constraint=True, related_name='phoneNumbers')
