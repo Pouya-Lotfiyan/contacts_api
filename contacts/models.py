@@ -15,7 +15,7 @@ class Contact(models.Model):
         verbose_name_plural = "Contacts"
 
     def __str__(self):
-        return self.name
+        return self.first_name
 
 
 
@@ -32,4 +32,4 @@ class PhoneNumber(models.Model):
     choices=PhoneNumberType.choices,
     default=PhoneNumberType.HOME,
     )
-    contanct = models.ForeignKey(Contact, verbose_name="PhoneNumber" , on_delete=models.CASCADE)
+    contact = models.ForeignKey(Contact, on_delete=models.CASCADE, db_constraint=True, related_name='phoneNumbers')
