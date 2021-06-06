@@ -4,7 +4,7 @@ from rest_framework.test import APITestCase
 import json
 from .models import Contact
 
-class AccountTests(APITestCase):
+class ContctsTests(APITestCase):
     def test_create_account(self):
         """
         Ensure we can create a new contact object.
@@ -12,7 +12,6 @@ class AccountTests(APITestCase):
         url = reverse('contacts-list')
         data = {'first_name': 'pouya', 'last_name': 'lotfiyan'}
         response = self.client.post(url, data, format='json')
-        print(response)
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
 
     def test_get_contact(self):
